@@ -14,7 +14,7 @@ div {
 	border: 0;
 }
 
-video {
+.mainvideo {
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -44,7 +44,6 @@ img {
 
 #sub_screens {
 	position: absolute;
-	background-color: #000000;
 	z-index: 2;
 }
 
@@ -52,5 +51,16 @@ img {
 	position: relative;
 	width: 100%;
 	float: left;
+}
+
+.secondvideo {
+	position: absolute;
+	width: 35%;
+	top: 330px;
+	left: 570px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	z-index: -1;
 }
 
