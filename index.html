@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div id="main_screen">
-		<video class="mainvideo" autoplay="autoplay" muted="muted" loop="loop">
+		<video id="mainvideo" class="mainvideo" autoplay="autoplay" muted="muted" loop="loop">
   		<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
   		<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">			
 		</video>
@@ -16,10 +16,7 @@
 	<div id="sub_screens">
 		<div id="second_screen">
 			<img src="media/iphone_screen.png"/>
-			<video class="secondvideo" autoplay="autoplay" muted="muted" loop="loop">
-				<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-				<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">			
-			</video>
+			<canvas id="secondcanvas" class="secondcanvas"></canvas>
 		</div>
 	</div>
 </body>

@@ -53,14 +53,16 @@ img {
 	float: left;
 }
 
-.secondvideo {
+.secondcanvas {
 	position: absolute;
-	width: 35%;
+	width: 520px;
+	height: 305px;
 	top: 330px;
 	left: 570px;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	z-index: -1;
+	/*border: 1px solid red;*/
 }
 
