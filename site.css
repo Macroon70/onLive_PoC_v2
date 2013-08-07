@@ -28,6 +28,20 @@ img {
 	border: 0;
 }
 
+h1 {
+	font-size: 7.0em;
+	font-style: italic;
+	font-weight: bold;
+	line-height: 90px;
+	color: #ffffff;
+}
+
+.bubble {
+	background-image: url('media/bubble.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
 /* Main Screen */
 
 #main_screen {
@@ -37,7 +51,6 @@ img {
 	width: 100%;
 	z-index: 0;
 }
-
 
 
 /* Sub Screens */
@@ -52,5 +65,18 @@ img {
 	position: relative;
 	width: 100%;
 	float: left;
+}
+
+#header_wrapper {
+	padding: 6%;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 5%;
+}
+
+#header_wrapper > div {
+	position: absolute;
 }
 
