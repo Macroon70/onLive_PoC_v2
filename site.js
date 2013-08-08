@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
 	var mainScreen = document.getElementById('main_screen');
 	var mainScreenOffsets = mainScreen.getBoundingClientRect();
 	var subScreens = document.getElementById('sub_screens');
@@ -53,10 +53,97 @@ $(function() {
 	checkSecondHeadline(0 - subScreenActualOffsets.top + 200);
 	checkThirdHeadline(0 - thirdScreenActualOffsets.top + 400);
 
-	$('.subButton').on('click', function() {
-		$("html, body").animate({ scrollTop: 0 }, 3000);
+	$('.vertical-mover').on('click', function() {
+		$("html, body").animate({ scrollTop: $(this).attr('data-top') }, 1500);
 		return false;
 	})
+
+	////////////////////////
+	// Vertical changer
+	/////////
+
+	function setVerticalToActualPos(pos) {
+		if (pos <= 500 && pos >= 0) { 
+			if (!$('#toTop div').hasClass('active_dot')) {
+				$('.active_dot').removeClass('active_dot');
+				$('#toTop div')
+					.addClass('active_dot');
+			}
+		} else if (pos > 500 && pos <= 1500) {
+			if (!$('#toSecond div').hasClass('active_dot')) {
+				$('.active_dot').removeClass('active_dot');
+				$('#toSecond div')
+					.addClass('active_dot');
+			}
+		} else {
+			if (!$('#toThird div').hasClass('active_dot')) {
+				$('.active_dot').removeClass('active_dot');
+				$('#toThird div')
+					.addClass('active_dot');
+			}
+		}
+	}
+
+	var toSecond = $('#main_screen').height();
+	var toThird = $('#main_screen').height() + $('#second_screen').height() + $('#second_to_third').height();
+
+	$('#toTop').attr('data-top','0');
+	$('#toSecond').attr('data-top', toSecond);
+	$('#toThird').attr('data-top', toThird);
+	
+
+	////////////////////////
+	// Image changer
+	/////////
+
+	function imageChanger() {
+		if ($('.hidden_image').attr('data-id') == 'mac') {
+			$('#secondVideo')
+				.css({
+					"transform": "rotateZ(0deg) rotateY(0deg)", /* W3C */
+  				"-webkit-transform": "rotateZ(0deg) rotateY(0deg)", /* Safari & Chrome */
+  				"-moz-transform": "rotateZ(0deg) rotateY(0deg)", /* Firefox */
+  				"-ms-transform": "rotateZ(0deg) rotateY(0deg)", /* Internet Explorer */
+  				"-o-transform": "rotateZ(0deg) rotateY(0deg)" /* Opera */
+  			})
+  			.animate({
+  				width: '65%',
+  				height: '50%',
+  				left: '17%',
+  				top: '18%'
+  			}, 'slow');
+  		$('#secondVideo > div').css('left','75%');
+		} else {
+			$('#secondVideo')
+				.css({
+					"transform": "rotateZ(1deg) rotateY(4deg)", /* W3C */
+  				"-webkit-transform": "rotateZ(1deg) rotateY(4deg)", /* Safari & Chrome */
+  				"-moz-transform": "rotateZ(1deg) rotateY(4deg)", /* Firefox */
+  				"-ms-transform": "rotateZ(1deg) rotateY(4deg)", /* Internet Explorer */
+  				"-o-transform": "rotateZ(1deg) rotateY(4deg)" /* Opera */
+  			})
+  			.animate({
+  				width: '35%',
+  				height: '35%',
+  				left: '36%',
+  				top: '34%'
+  			}, 'slow');
+  		$('#secondVideo > div').css('left','70%');
+		}
+		$('.hidden_image')
+			.animate({opacity : 1}, 'slow', function() {
+				$(this).removeClass('hidden_image');
+			})
+			.siblings('img')
+				.animate({opacity : 0}, 'slow', function() {
+					$(this).addClass('hidden_image');
+				})
+		imageChangerTimer = window.setTimeout(function() { imageChanger(); }, 5000 );			
+	}
+
+
+	var imageChangerTimer = window.setTimeout(function() { imageChanger(); }, 5000 );
+
 
 	window.onscroll = function(event) {
 
@@ -65,24 +152,15 @@ $(function() {
 
 		var thirdScreen = document.getElementById('thirdScreen').getBoundingClientRect();
 
+		setVerticalToActualPos(Math.abs(subScreenActualOffsets.top - 777));
 
 		if (subScreenActualOffsets.top <= 0) {
-				$('#loading1').css('display','none');
-				$('#loading2').css('display','block');
-				$('video').appendTo('#secondVideo');
+				$('#rootVideo').appendTo('#thirdVideo');
 				rootVideo.play();
 		} else {
-				$('#loading1').css('display','block');
-				$('video').appendTo('#main_screen');
+				$('#rootVideo').appendTo('#main_screen');
 				rootVideo.play()
 		}
-		if (thirdScreen.top <= 0) {
-				$('#loading2').css('display','none');
-				$('#loading1').css('display','block');
-				$('video').appendTo('#thirdVideo');
-				rootVideo.play();
-		}
-
 
 
 		if (subScreenActualOffsets.top >= -200) {
@@ -103,7 +181,7 @@ $(function() {
 		} else if (mainScreenOffsets.bottom - 17 <= subScreenActualOffsets.top && $('#side_wrapper').hasClass('hiding_side')) {
 			$('#side_wrapper')
 				.removeClass('hiding_side')
-				.animate({right: '0px'}, 'slow', function() {
+				.animate({right: '4%'}, 'slow', function() {
 					$('#onlive_logo').css('visibility','hidden');
 				});
 		}		

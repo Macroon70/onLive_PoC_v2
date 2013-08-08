@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: Helvetica;
+	font-family: 'aktiv_groteskregular', Helvetica;
 	font-size: 1.0em;
 }
 
@@ -96,6 +96,10 @@ li.actual_menu {
 	left: 70px;
 }
 
+.hidden_image {
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
 
 .bubble {
 	background-image: url('media/bubble.png');
@@ -118,7 +122,7 @@ li.actual_menu {
 #onlive_logo {
 	position: fixed;
 	top: 20px;
-	right: 20px;
+	right: 80px;
 	z-index: 5;
 	background-image: url('media/onlive_logo_transparent.png');
 	visibility: hidden;
@@ -133,11 +137,44 @@ li.actual_menu {
 
 /* side menu */
 
+#vertical_switcher {
+	position: fixed;
+	width: 4%;
+	z-index: 7;
+	height: 100%;
+	background-color: #000000;
+	top: 0;
+	right: 0;
+}
+
+#vertical_switcher > a {
+	position: relative;
+	float: left;
+	display: block;
+	width: 100%;
+	height: 10%;
+}
+
+#vertical_switcher div {
+	margin: auto;
+	width: 20%;
+	height: 20%;
+	background-image: url('media/bubble_grey.png');
+}
+
+#vertical_switcher div.active_dot {
+	background-image: url('media/bubble.png') !important;
+}
+
+#vertical_switcher > #toTop {
+	margin-top: 300px;
+}
+
 #side_wrapper {
 	width: 17%;
 	height: 100%;
 	position: fixed;
-	right: 0;
+	right: 4%;
 	top: 0;
 	z-index: 6;
 }
@@ -219,6 +256,19 @@ li:not(.actual_menu):hover a {
 	float: left;
 }
 
+#second_screen {
+	width: 100%;
+	height: 927px;
+}
+
+#second_screen > img {
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 #secondVideo {
 	transform: rotateZ(1deg) rotateY(4deg); /* W3C */
   -webkit-transform: rotateZ(1deg) rotateY(4deg); /* Safari & Chrome */
@@ -237,11 +287,7 @@ li:not(.actual_menu):hover a {
 	position: absolute !important;
 	top: 8%;
 	left: 70%;
-}
-
-#secondVideo > img {
-	position: absolute;
-	top: -12%;
+	width: 28%;
 }
 
 .header_wrapper {
@@ -264,7 +310,7 @@ li:not(.actual_menu):hover a {
 }
 
 #second_to_third {
-	height: 230px;
+	height: 480px;
 }
 
 #second_to_third > div {
@@ -275,11 +321,16 @@ li:not(.actual_menu):hover a {
 	font-size: 1.5em;
 }
 
+#watch_sources {
+	width: 100%;
+	top: -130px;
+}
+
 #watch_spectatle {
 	width: 67%;
 	height: 40%;
 	left: 0;
-	top: -10px;
+	top: 370px;
 	background-color: #ffffff;
 	height: 350px;
 }
@@ -315,20 +366,20 @@ li:not(.actual_menu):hover a {
 	width: 35.5%;
 	height: 300px;
 	right: 0;
-	top: -70px;
+	top: 325px;
 	background-color: #6f62bd;
 	/*z-index: 2;*/
 }
 
 #watch_learn h2 {
-	margin-top: 10px;
+	margin-top: 10%;
 	margin-left: 15%;
 }
 
 #watch_learn p {
 	position: absolute;
 	color: #3d398b;
-	bottom: 70px;
+	bottom: 15%;
 	left: 15%;
 }
 
@@ -355,15 +406,10 @@ li:not(.actual_menu):hover a {
 
 #thirdVideo > div {
 	position: absolute !important;
-	top: 8%;
-	left: 80%;
+	top: 3%;
+	left: 79%;
+	width: 28%;
 }
-
-#thirdVideo > img {
-	position: absolute;
-	top: -12%;
-}
-
 
 #third_forth_switcher {
 	height: 600px;

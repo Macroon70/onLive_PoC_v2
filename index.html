@@ -2,9 +2,12 @@
 <html>
 <head>
 	<title>onLive PoC v2.0</title>
-	<link href="site.css?v=1" rel="stylesheet" type="text/css"/>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="site.js?v=1" type="text/javascript"></script>		
+	<script src="site.js?v=1" type="text/javascript"></script>
+	<script src="webfontkit/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="webfontkit/specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="webfontkit/stylesheet.css" type="text/css" charset="utf-8" />	
+	<link href="site.css?v=1" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 	<div id="onlive_logo" class="logo"></div>	
@@ -16,6 +19,11 @@
 		<div id="header_wrapper" class="fill_bubbles header_wrapper">
 			<h1>PLAY.<br />WATCH LIVE.</h1>
 		</div>
+	</div>
+	<div id="vertical_switcher">
+		<a id="toTop" class="vertical-mover" data-top="" href="#"><div class="bubble"></div></a>
+		<a id="toSecond" class="vertical-mover" data-top="" href="#"><div class="bubble"></div></a>
+		<a id="toThird" class="vertical-mover" data-top="" href="#"><div class="bubble"></div></a>
 	</div>
 	<div id="side_wrapper">
 		<div id="side_background"></div>
@@ -33,13 +41,20 @@
 	</div>	
 	<div id="sub_screens">
 		<div id="second_screen">
-			<img src="media/iphone_screen.png">
+			<img class="hidden_image" data-id="mac" src="media/macbook_screen.png">
+			<img data-id="iphone" src="media/iphone_screen.png">
 			<div id="secondVideo">
-				<img id="loading1" src="media/loading.gif">
 				<div id="side_logo" class="logo"></div>
+				<video id="secVideo" class="video" autoplay="autoplay" muted="muted" loop="loop">
+					<source type="video/mp4" src="http://en.ony.ru/upload/BlocksPagesProperties/video_mp4/341b01de871d7879428bd2fbffcd04d0.m4v">
+		  		<source src="http://en.ony.ru/upload/BlocksPagesProperties/video_ogv/ee103008ab88d41b442de738702b5493.ogv" type="video/ogg">			
+				</video>
 			</div>
 		</div>
 		<div id="second_to_third">
+			<div id="watch_sources">
+				<img src="media/sources.png">
+			</div>
 			<div id="watch_spectatle">
 				<h2>WATCH THE SPECTATLE</h2>
 				<p>JOIN NOW</p>
@@ -54,7 +69,6 @@
 		<div id="thirdScreen">
 			<img src="media/ipad_screen.png"/>
 			<div id="thirdVideo">
-				<img id="loading2" src="media/loading.gif">
 				<div id="side_logo" class="logo"></div>
 			</div>
 		</div>
