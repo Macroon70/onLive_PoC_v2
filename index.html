@@ -7,17 +7,70 @@
 	<script src="site.js?v=1" type="text/javascript"></script>		
 </head>
 <body>
+	<div id="onlive_logo" class="logo"></div>	
 	<div id="main_screen">
-		<video class="video" autoplay="autoplay" muted="muted" loop="loop">
-  		<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-  		<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">			
+		<video id="rootVideo" class="video" autoplay="autoplay" muted="muted" loop="loop">
+			<source type="video/mp4" src="http://en.ony.ru/upload/BlocksPagesProperties/video_mp4/341b01de871d7879428bd2fbffcd04d0.m4v">
+  		<source src="http://en.ony.ru/upload/BlocksPagesProperties/video_ogv/ee103008ab88d41b442de738702b5493.ogv" type="video/ogg">			
 		</video>
+		<div id="header_wrapper" class="fill_bubbles header_wrapper">
+			<h1>PLAY.<br />WATCH LIVE.</h1>
+		</div>
 	</div>
+	<div id="side_wrapper">
+		<div id="side_background"></div>
+		<div id="side_logo" class="logo"></div>
+		<div id="side_menu">
+			<ul>
+				<li class="actual_menu"><a href="#">WELCOME</a></li>
+				<li><a href="#">PLAY</a></li>
+				<li><a href="#">GAMES</a></li>
+				<li><a href="#">HARDWARE</a></li>
+				<li><a href="#">JOIN</a></li>
+			</ul>
+		</div>
+		<div id="sigin"><ul><li><a href="#">SIGN IN</a></li></ul></div>
+	</div>	
 	<div id="sub_screens">
 		<div id="second_screen">
-			<img src="media/iphone_screen.png"/>
-			<div id="header_wrapper" class="fill_bubbles">
-				<h1>PLAY.<br />WATCH LIVE.</h1>
+			<img src="media/iphone_screen.png">
+			<div id="secondVideo">
+				<img id="loading1" src="media/loading.gif">
+				<div id="side_logo" class="logo"></div>
+			</div>
+		</div>
+		<div id="second_to_third">
+			<div id="watch_spectatle">
+				<h2>WATCH THE SPECTATLE</h2>
+				<p>JOIN NOW</p>
+				<div id="spectatle_button"><a class="subButton" href="#"><img src="media/green_button.png" alt=""/></a></div>
+			</div>
+			<div id="watch_learn">
+				<h2>WATCH AND<br />LEARN.</h2>
+				<p>JOIN NOW</p>
+				<div id="watch_button"><a class="subButton" href="#"><img src="media/purple_button.png" alt=""/></a></div>
+			</div>
+		</div>
+		<div id="thirdScreen">
+			<img src="media/ipad_screen.png"/>
+			<div id="thirdVideo">
+				<img id="loading2" src="media/loading.gif">
+				<div id="side_logo" class="logo"></div>
+			</div>
+		</div>
+		<div id="third_forth_switcher">
+			<div id="watch_hardware">
+				<div id="hardware_bg"></div>
+				<h2>ONE CONTROLLER,<br />ALL DEVICES</h2>
+				<div id="hardware_button"><a class="subButton" href="#"><img src="media/purple_button.png" alt=""/></a></div>			
+				<div id="hardware_footer"></div>
+				<p>SHOP HARDWARE</p>
+			</div>
+			<div id="watch_devices">
+				<div id="devices_bg"></div>
+				<h2>PLAY ON ALL YOUR<br />DEVICES</h2>
+				<p>JOIN NOW</p>
+				<div id="devices_button"><a class="subButton" href="#"><img src="media/orange_button.png" alt=""/></a></div>			
 			</div>
 		</div>
 	</div>
